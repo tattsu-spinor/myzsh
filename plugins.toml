@@ -1,0 +1,68 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+## デフォルトで遅延読み込みに設定 (同期読み込みをしたい場合は"source"を指定する)
+apply = ["defer"]
+
+## Prompt
+[plugins.powerlevel10k]
+github = "romkatv/powerlevel10k"
+apply = ["source"]
+
+## 遅延読み込み
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+apply = ["source"]
+
+[templates]
+defer = { value = 'zsh-defer source "{{ file }}"', each = true }
+
+## Prezto Modules
+[plugins.prezto-modules]
+github = "sorin-ionescu/prezto"
+dir = "modules"
+use = ["{completion,editor}/init.zsh"]
+apply = ["source"]
+
+## Autoload
+[plugins.autoload]
+inline = 'autoload -Uz cdr compinit && zsh-defer compinit'
+
+## Oh-My-Zsh Library
+[plugins.ohmyzsh-lib]
+github = "ohmyzsh/ohmyzsh"
+dir = "lib"
+# use = ["{key-bindings,directories,history}.zsh"]
+
+## 入力補完
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+## 入力補完
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+## ハイライト
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+
+## Pecoとの連携
+[plugins.anyframe]
+github = "mollifier/anyframe"
+
+## Local Plugins
+[plugins.local]
+local = "~/.sheldon/local_plugins"
+use = ["{*}.zsh"]
