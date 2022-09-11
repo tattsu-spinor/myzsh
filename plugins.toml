@@ -64,5 +64,5 @@ github = "mollifier/anyframe"
 
 ## Local Plugins
 [plugins.local]
-local = "~/.sheldon/local_plugins"
+local = "~/.sheldon/local"
 use = ["{*}.zsh"]
