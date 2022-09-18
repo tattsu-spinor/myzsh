@@ -5,8 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Plugin manager
+# Oh-My-Zshの設定
 export ZSH="$HOME/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
+
+# ~/.sheldon/plugins.tomlを読み込み
 eval "$(sheldon source)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
