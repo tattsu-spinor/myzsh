@@ -15,7 +15,26 @@ shell = "zsh"
 ## デフォルトで遅延読み込みに設定 (同期読み込みをしたい場合は"source"を指定する)
 apply = ["defer"]
 
-## Prompt
+[templates]
+defer = { value = 'zsh-defer source "{{ file }}"', each = true }
+
+## 重複を除外
+[plugins.typeset]
+inline = 'typeset -U path fpath'
+
+## Oh-My-Zsh
+[plugins.oh-my-zsh]
+github = "ohmyzsh/ohmyzsh"
+apply = ["source"]
+
+## Prezto Modules
+[plugins.prezto]
+github = "sorin-ionescu/prezto"
+dir = "modules"
+use = ["{completion,editor}/init.zsh"]
+apply = ["source"]
+
+## Powerlevel10k
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
 apply = ["source"]
@@ -25,25 +44,9 @@ apply = ["source"]
 github = "romkatv/zsh-defer"
 apply = ["source"]
 
-[templates]
-defer = { value = 'zsh-defer source "{{ file }}"', each = true }
-
-## Prezto Modules
-[plugins.prezto-modules]
-github = "sorin-ionescu/prezto"
-dir = "modules"
-use = ["{completion,editor}/init.zsh"]
-apply = ["source"]
-
 ## Autoload
 [plugins.autoload]
 inline = 'autoload -Uz cdr compinit && zsh-defer compinit'
-
-## Oh-My-Zsh Library
-[plugins.ohmyzsh-lib]
-github = "ohmyzsh/ohmyzsh"
-dir = "lib"
-# use = ["{key-bindings,directories,history}.zsh"]
 
 ## 入力補完
 [plugins.zsh-autosuggestions]
