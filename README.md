@@ -1,5 +1,6 @@
 # myzsh
 
+
 ## sheldonについて
 
 - [公式ドキュメント](https://sheldon.cli.rs/Introduction.html)
@@ -25,6 +26,5 @@
     ```toml
     [plugins.local-sync]
     local = "~/.sheldon/local_sync"
-    use = ["{*}.zsh"]
     apply = ["source"]
     ```
