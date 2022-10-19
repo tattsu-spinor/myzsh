@@ -22,10 +22,6 @@ zsh-defer source "{{ file }}"
 {% endfor %}\
 """
 
-## 重複を除外
-[plugins.typeset]
-inline = 'typeset -U path fpath'
-
 ## Oh-My-Zsh
 [plugins.oh-my-zsh]
 github = "ohmyzsh/ohmyzsh"
