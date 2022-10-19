@@ -28,3 +28,11 @@
     local = "~/.config/sheldon/local_sync"
     apply = ["source"]
     ```
+
+## よく使うコマンド
+
+- `sheldon lock --update`: プラグインの更新
+  - plugins.lockを再生成する。
+- `sheldon source`: 実際に実行するコマンドの出力
+  - plugins.lockを読み込む。
+  - plugins.tomlの変更を検出したら`sheldon lock --update`を先に行う。
