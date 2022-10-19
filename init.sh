@@ -6,12 +6,13 @@ CURRENT=$(cd $(dirname $0); pwd)
 ln -sv $CURRENT/.zshrc ~
 
 ## plugins.tomlのシンボリックリンクリンクを作成
-mkdir -pv ~/.sheldon
-ln -sv $CURRENT/plugins.toml ~/.sheldon
+SHELDON=~/.config/sheldon
+mkdir -pv $SHELDON
+ln -sv $CURRENT/plugins.toml $SHELDON
 
 ## local pluginのシンボリックリンクを作成
-mkdir -pv ~/.sheldon/local
+mkdir -pv $SHELDON/local
 for file in $CURRENT/local_plugins/*.zsh
 do
-    ln -sv $file ~/.sheldon/local
+    ln -sv $file $SHELDON/local
 done
