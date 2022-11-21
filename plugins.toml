@@ -46,7 +46,10 @@ apply = ["source"]
 
 ## Autoload
 [plugins.autoload]
-inline = 'autoload -Uz cdr compinit && zsh-defer compinit'
+inline = """
+autoload -Uz add-zsh-hook cdr chpwd_recent_dirs compinit
+zsh-defer add-zsh-hook chpwd chpwd_recent_dirs compinit
+"""
 
 ## 入力補完
 [plugins.zsh-autosuggestions]
