@@ -1,18 +1,18 @@
 #!/bin/sh
 
 CURRENT=$(cd $(dirname $0); pwd)
+SHELDON=~/.config/sheldon
 
 ## .zshrcのシンボリックリンクを作成
-ln -sv $CURRENT/.zshrc ~
+ln -fsv $CURRENT/.zshrc ~
 
 ## plugins.tomlのシンボリックリンクリンクを作成
-SHELDON=~/.config/sheldon
 mkdir -pv $SHELDON
-ln -sv $CURRENT/plugins.toml $SHELDON
+ln -fsv $CURRENT/plugins.toml $SHELDON
 
-## local pluginのシンボリックリンクを作成
-mkdir -pv $SHELDON/local
-for file in $CURRENT/local_plugins/*.zsh
+## local-asyncのシンボリックリンクを作成
+mkdir -pv $SHELDON/local-async
+for file in $CURRENT/local-async/*.zsh
 do
-    ln -sv $file $SHELDON/local
+    ln -fsv $file $SHELDON/local-async
 done

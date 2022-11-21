@@ -1,3 +1,4 @@
+# historyコマンドの設定
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000 # メモリ上の保存件数
 SAVEHIST=10000 # ファイル上の保存件数

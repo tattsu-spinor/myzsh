@@ -66,5 +66,5 @@ github = "zdharma-continuum/fast-syntax-highlighting"
 github = "mollifier/anyframe"
 
 ## Local Plugins
-[plugins.local]
-local = "~/.config/sheldon/local"
+[plugins.local-async]
+local = "~/.config/sheldon/local-async"

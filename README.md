@@ -1,6 +1,5 @@
 # myzsh
 
-
 ## sheldonについて
 
 - [公式ドキュメント](https://sheldon.cli.rs/Introduction.html)
@@ -20,14 +19,9 @@
 ## カスタム設定
 
 - sheldonの公式ドキュメントなどを参考にしてplugins.tomlを編集する。
-- 基本的に自前の設定は~/.config/sheldon/local以下にzshファイルを作成して書き込めばOK。
+- 基本的に自前の設定は~/.config/sheldon/local-async以下にzshファイルを作成して書き込めばOK。
   - 例えば、パスの設定を記述したpath.zshなど。
-  - ただし、ここに置くと遅延読み込みされるため、それだとまずい場合はplugins.tomlに以下のような記述を追加して~/.config/sheldon/local_sync以下にzshファイルを置く。
-    ```toml
-    [plugins.local-sync]
-    local = "~/.config/sheldon/local_sync"
-    apply = ["source"]
-    ```
+  - ただし、ここに置くと遅延読み込みされるので注意。
 
 ## よく使うコマンド
 
