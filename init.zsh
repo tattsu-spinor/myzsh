@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
-CURRENT=$(cd $(dirname $0); pwd)
+CURRENT=$(realpath $(dirname $0))
 SHELDON=~/.config/sheldon
 
 ## .zshrcのシンボリックリンクを作成
