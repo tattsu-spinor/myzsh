@@ -3,18 +3,16 @@
 ## sheldonについて
 
 - [公式ドキュメント](https://sheldon.cli.rs/Introduction.html)
-- [レポジトリ](https://github.com/rossmacarthur/sheldon)
+- [GitHub](https://github.com/rossmacarthur/sheldon)
 - [zinitが不安なのでsheldonへ移行したらzshの起動が50msと更に速くなった](https://ktrysmt.github.io/blog/migrate-zinit-to-sheldon/)
 
 ## 初期設定
 
-1. `brew install sheldon`を実行する。
+1. `brew install sheldon peco`を実行する。
 2. ~/.zshrcを削除する。(必要ならバックアップを取る。)
 3. このレポジトリを任意の場所に`git clone`する。
-4. レポジトリのルートディレクトリに`cd`する。
-5. `chmod +x init.sh`を実行して実行権限を付与。
-6. `./init.sh`を実行する。
-7. `exec zsh`で再起動すれば完了。
+4. `./init.zsh`を実行する。
+5. `zsh`でシェルを再起動すれば完了。
 
 ## カスタム設定
 
