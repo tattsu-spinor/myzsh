@@ -52,5 +52,5 @@ apply = ["defer"]
 
 ## Local Plugins
 [plugins.local-async]
-local = "~/.config/sheldon/local-async"
+local = "~/.config/sheldon/conf.d"
 apply = ["defer"]
