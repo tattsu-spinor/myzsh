@@ -1,18 +1,24 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+### Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
-# パスの重複を除外
+### パスの重複を除外
 typeset -U path fpath
 
-# Oh-My-Zshの設定
-export ZSH="$HOME/.local/share/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
+### compinit
+autoload -Uz compinit && compinit
 
-# Sheldonの実行
+### Sheldon
 eval "$(sheldon source)"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+### Prompt (Oh My Posh)
+eval "$(oh-my-posh init zsh --config ~/.config/mytheme.omp.json --manual)"
+eval "$(oh-my-posh completion zsh)"
+
+### zoxide
+eval "$(zoxide init zsh)"
+
+### fzf
+[[ -f "$HOME/.fzf.zsh" ]] && builtin source ~/.fzf.zsh
+
+### Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

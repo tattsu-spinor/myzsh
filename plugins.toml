@@ -12,9 +12,6 @@
 
 shell = "zsh"
 
-## デフォルトで遅延読み込みに設定 (同期読み込みをしたい場合は"source"を指定する)
-apply = ["defer"]
-
 [templates]
 defer = """
 {% for file in files %}\
@@ -22,52 +19,38 @@ zsh-defer source "{{ file }}"
 {% endfor %}\
 """
 
-## Oh-My-Zsh
+## Oh-My-Zsh Library
 [plugins.oh-my-zsh]
 github = "ohmyzsh/ohmyzsh"
-apply = ["source"]
+dir = "lib"
 
 ## Prezto Modules
 [plugins.prezto]
 github = "sorin-ionescu/prezto"
 dir = "modules"
 use = ["{completion,editor}/init.zsh"]
-apply = ["source"]
-
-## Powerlevel10k
-[plugins.powerlevel10k]
-github = "romkatv/powerlevel10k"
-apply = ["source"]
 
 ## 遅延読み込み
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
-apply = ["source"]
-
-## Autoload
-[plugins.autoload]
-inline = """
-autoload -Uz add-zsh-hook cdr chpwd_recent_dirs compinit
-zsh-defer add-zsh-hook chpwd chpwd_recent_dirs compinit
-"""
 
 ## 入力補完
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 use = ["{{ name }}.zsh"]
+apply = ["defer"]
 
 ## 入力補完
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
+apply = ["defer"]
 
-## ハイライト
-[plugins.fast-syntax-highlighting]
-github = "zdharma-continuum/fast-syntax-highlighting"
-
-## Pecoとの連携
-[plugins.anyframe]
-github = "mollifier/anyframe"
+## シンタックスハイライト
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+apply = ["defer"]
 
 ## Local Plugins
 [plugins.local-async]
 local = "~/.config/sheldon/local-async"
+apply = ["defer"]

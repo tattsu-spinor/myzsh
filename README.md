@@ -8,11 +8,11 @@
 
 ## 初期設定
 
-1. `brew install sheldon peco`を実行する。
+1. `brew install sheldon`を実行する。
 2. ~/.zshrcを削除する。(必要ならバックアップを取る。)
 3. このレポジトリを任意の場所に`git clone`する。
 4. `./init.zsh`を実行する。
-5. `zsh`でシェルを再起動すれば完了。
+5. `exec zsh`でシェルを再起動すれば完了。
 
 ## カスタム設定
 
